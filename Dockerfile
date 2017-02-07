@@ -25,7 +25,7 @@ RUN apk add --no-cache \
   && sed -i -e 's/#SOLR_PORT=8983/SOLR_PORT=8983/' /opt/solr/bin/solr.in.sh \
   && sed -i -e '/-Dsolr.clustering.enabled=true/ a SOLR_OPTS="$SOLR_OPTS -Dsun.net.inetaddr.ttl=60 -Dsun.net.inetaddr.negative.ttl=60"' /opt/solr/bin/solr.in.sh \
   && mkdir -p /opt/solr/server/solr/lib /opt/solr/server/solr/mycores /opt/docker-solr /docker-entrypoint-initdb.d \
-  && curl -s -L http://central.maven.org/maven2/com/github/healthonnet/hon-lucene-synonyms/5.0.5/hon-lucene-synonyms-5.0.5.jar -o /opt/solr/server/lib/hon-lucene-synonyms-5.0.5.jar \
+  && curl -s -L https://nolanlawson.s3.amazonaws.com/dist/org.healthonnet.lucene.synonyms/release/2.0.0/hon-lucene-synonyms-2.0.0.jar -o /opt/solr/server/lib/hon-lucene-synonyms-2.0.0.jar \
   && chown -R $SOLR_USER:$SOLR_USER /opt/solr /opt/docker-solr
 
 WORKDIR /opt/solr

@@ -1,6 +1,6 @@
 FROM openjdk:jre-alpine
 
-ENV SOLR_VERSION=5.4.1 \
+ENV SOLR_VERSION=5.3.1 \
     SOLR_USER=solr \
     SOLR_UID=8983 \
     PATH=/opt/solr/bin:/opt/docker-solr/scripts:$PATH
